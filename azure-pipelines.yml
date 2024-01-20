@@ -32,3 +32,11 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(5d7377f5-2273-42cc-b1b5-bcabc462210e)'
+    appType: 'webAppLinux'
+    WebAppName: '123danleo'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
